@@ -1,5 +1,5 @@
-{% set version = "1.8.0" %}
-{% set sha256 = "947a314a212b5d94985d89b43440dbe66b696e12bbdf9a2f78967b98d74abedc" %}
+{% set version = "1.14.0" %}
+{% set sha256 = "fc361367f0d4b780a868a8833f9f30b9c9f4ac9faea4e6b251db8b4b0398466e" %}
 
 package:
   name: gstreamer
@@ -11,19 +11,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win or osx]
-  number: 2
+  skip: true  # [win]
 
 requirements:
   build:
     - bison
     - flex
-    - glib 2.51.*
+    - glib 2.55.*
+    - gobject-introspection
     - m4
     - perl
     - xz 5.2.*
+    - gettext
   run:
-    - glib 2.51.*
+    - glib 2.55.*
 
 test:
   commands:

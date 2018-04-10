@@ -6,7 +6,7 @@ cp -r $PREFIX/lib/libffi* $PREFIX/lib64
 
 # The datarootdir option places the docs into a temp folder that won't
 # be included in the package (it is about 12MB).
-./configure --disable-examples --prefix="$PREFIX" --datarootdir=`pwd`/tmpshare
+./configure --disable-examples --prefix="$PREFIX" --enable-introspection
 make
 # This is failing because the exported symbols by the Gstreamer .so library
 # on Linux are different from the expected ones on Windows. We don't know
